@@ -20,24 +20,80 @@ class Report(metaclass=abc.ABCMeta):
             self.output_line(line)
 
     @abc.abstractmethod
-    def output_start(self): pass
+    def output_start(self):
+        pass
 
     @abc.abstractmethod
-    def output_head(self): pass
+    def output_head(self):
+        pass
 
     @abc.abstractmethod
-    def output_body_start(self): pass
+    def output_body_start(self):
+        pass
 
     @abc.abstractmethod
-    def output_line(self, line): pass
+    def output_line(self, line):
+        pass
 
     @abc.abstractmethod
-    def output_body_end(self): pass
+    def output_body_end(self):
+        pass
 
     @abc.abstractmethod
-    def output_end(self): pass
+    def output_end(self):
+        pass
+
+
+class HTMLReport(Report):
+    def output_start(self):
+        print("<html>")
+
+    def output_head(self):
+        print("<head>")
+
+        print(f"<title>{self.title}</title>")
+
+        print("</head>")
+
+    def output_body_start(self):
+        print("<body>")
+
+    def output_line(self, line):
+        print(f"<p>{line}</p>")
+
+    def output_body_end(self):
+        print("</body>")
+
+    def output_end(self):
+        print("</html>")
+
+
+class PlainTextReport(Report):
+    def output_head(self):
+        print(f"*** {self.title} ***")
+
+    def output_line(self, line):
+        print(line)
+
+    def output_start(self):
+        pass
+
+    def output_body_start(self):
+        pass
+
+    def output_body_end(self):
+        pass
+
+    def output_end(self):
+        pass
 
 
 if __name__ == "__main__":
+    report = PlainTextReport()
+    report.output_report()
+
+    report = HTMLReport()
+    report.output_report()
+
     report = Report()
     report.output_report()
