@@ -34,11 +34,11 @@ class PlainTextFormatter(Formatter):
 
 
 if __name__ == "__main__":
-    report = Report(u"月次報告", [u"順調！", u"最高です！"],
+    report = Report("月次報告", ["順調！", "最高です！"],
                     PlainTextFormatter())
     report.output_report()
     print("-" * 70)
-    report = Report(u"月次報告", [u"順調！", u"最高です！"],
+    report = Report("月次報告", ["順調！", "最高です！"],
                     HTMLFormatter())
     report.output_report()
     print("-" * 70)
