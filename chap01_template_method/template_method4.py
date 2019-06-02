@@ -6,8 +6,8 @@ class Report(object):
     __metaclass__ = ABCMeta
 
     def __init__(self):
-        self.title = u"月次報告"
-        self.text = [u"順調", u"最高"]
+        self.title = "月次報告"
+        self.text = ["順調", "最高"]
 
     def output_report(self):
         self.output_start()
