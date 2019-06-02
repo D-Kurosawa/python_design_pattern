@@ -1,3 +1,25 @@
+"""
+strategy1.pyのHTMLFormatterもPlainTextFormatterもFormatterから継承しているのは、
+output_reportメソッドだけです。
+特別なアルゴリズムやメンバ変数を受け継いでいるわけではありません。
+すると、Formatter基底クラスなんか要らないんじゃないか、と考えるのは自然な発想です。
+
+Pythonは『ダックタイピング』を採用しています。
+オブジェクトの出自がどうであろうが、output_reportメソッドがあればそれで良いのです。
+さらに言えば、HTMLFormatterも、PlainTextFormatterも、output_report以外にメソッドがありません。
+メンバ変数すらないのです。これじゃあ、ただの関数と変わりません。
+
+ならば、本当に関数にしてしまえばいいじゃありませんか！
+
+Reportクラスにも多少の変更しました。これで関数を渡すことが出来ます。
+
+また、PlainTextFormatterもタイトルの飾り部分を変更できるようにし、
+関数のように呼び出せるようにしました。
+
+__call__メソッドを定義すれば、インスタンスを関数のように呼び出せるようになります。
+"""
+
+
 class Report:
     def __init__(self, title, text, formatter):
         self.title = title
