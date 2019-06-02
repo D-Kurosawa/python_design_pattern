@@ -1,4 +1,4 @@
-class Report(object):
+class Report:
     def __init__(self):
         self.title = "月次報告"
         self.text = ["順調", "最高"]
