@@ -1,4 +1,4 @@
-class Report(object):
+class Report:
     def __init__(self, title, text, formatter):
         self.title = title
         self.text = text
@@ -8,7 +8,7 @@ class Report(object):
         self.formatter.output_report(self.title, self.text)
 
 
-class Formatter(object):
+class Formatter:
     def output_report(self, title, text):
         assert False
 
@@ -34,11 +34,12 @@ class PlainTextFormatter(Formatter):
 
 
 if __name__ == "__main__":
-    report = Report("月次報告", ["順調！", "最高です！"],
-                    PlainTextFormatter())
+    report = Report("月次報告", ["順調！", "最高です！"], PlainTextFormatter())
     report.output_report()
+
     print("-" * 70)
-    report = Report("月次報告", ["順調！", "最高です！"],
-                    HTMLFormatter())
+
+    report = Report("月次報告", ["順調！", "最高です！"], HTMLFormatter())
     report.output_report()
+
     print("-" * 70)
