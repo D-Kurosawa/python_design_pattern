@@ -12,11 +12,11 @@ class Report(object):
 def html_formatter(content):
     print("<html>")
     print("<head>")
-    print("<title>%s</title>" % (content.title,))
+    print(f"<title>{content.title}</title>")
     print("</head>")
     print("<body>")
     for line in content.text:
-        print("<p>%s</p>" % (line,))
+        print(f"<p>{line}</p>")
     print("</body>")
     print("</html>")
 
