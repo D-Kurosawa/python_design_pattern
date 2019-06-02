@@ -1,4 +1,4 @@
-class Report(object):
+class Report:
     def __init__(self, title, text, formatter):
         self.title = title
         self.text = text
@@ -24,7 +24,7 @@ def html_formatter(title, text):
 
 
 # Callable版 PlainTextFormatter
-class PlainTextFormatter(object):
+class PlainTextFormatter:
     def __init__(self, decoration="***"):
         self.decoration = decoration
 
