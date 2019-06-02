@@ -1,4 +1,4 @@
-class Report(object):
+class Report:
     def __init__(self, title, text, formatter):
         self.title = title
         self.text = text
