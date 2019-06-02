@@ -1,9 +1,7 @@
-from abc import ABCMeta  # 2.6以上限定
-from abc import abstractmethod
+import abc
 
 
-class Report(object):
-    __metaclass__ = ABCMeta
+class Report(metaclass=abc.ABCMeta):
 
     def __init__(self):
         self.title = "月次報告"
@@ -21,22 +19,22 @@ class Report(object):
         for line in self.text:
             self.output_line(line)
 
-    @abstractmethod
+    @abc.abstractmethod
     def output_start(self): pass
 
-    @abstractmethod
+    @abc.abstractmethod
     def output_head(self): pass
 
-    @abstractmethod
+    @abc.abstractmethod
     def output_body_start(self): pass
 
-    @abstractmethod
+    @abc.abstractmethod
     def output_line(self, line): pass
 
-    @abstractmethod
+    @abc.abstractmethod
     def output_body_end(self): pass
 
-    @abstractmethod
+    @abc.abstractmethod
     def output_end(self): pass
 
 
