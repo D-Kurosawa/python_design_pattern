@@ -14,11 +14,11 @@ class Report(object):
 def html_formatter(title, text):
     print("<html>")
     print("<head>")
-    print("<title>%s</title>" % (title,))
+    print(f"<title>{title}</title>")
     print("</head>")
     print("<body>")
     for line in text:
-        print("<p>%s</p>" % (line,))
+        print(f"<p>{line}</p>")
     print("</body>")
     print("</html>")
 
@@ -29,7 +29,7 @@ class PlainTextFormatter(object):
         self.decoration = decoration
 
     def __call__(self, title, text):
-        print("%s%s%s" % (self.decoration, title, self.decoration))
+        print(f"{self.decoration}{title}{self.decoration}")
         for line in text:
             print(line)
 
