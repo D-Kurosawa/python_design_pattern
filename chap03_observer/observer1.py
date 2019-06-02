@@ -20,6 +20,9 @@ class Employee:
 class Payroll:
     @staticmethod
     def update(changed_employee):
+        """
+        :type changed_employee: Employee
+        """
         print(f"{changed_employee.name}のために小切手を切ります！")
         print(f"{changed_employee.name}の給料は現在{changed_employee.salary}円、"
               f"肩書きは{changed_employee.title}です")
@@ -28,6 +31,9 @@ class Payroll:
 class Taxman:
     @staticmethod
     def update(changed_employee):
+        """
+        :type changed_employee: Employee
+        """
         print(f"{changed_employee.name}に新しい税金の請求書を送ります。")
 
 
