@@ -10,6 +10,9 @@ class Report:
 
 
 def html_formatter(content):
+    """
+    :type content: Report
+    """
     print("<html>")
     print("<head>")
     print(f"<title>{content.title}</title>")
