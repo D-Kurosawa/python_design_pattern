@@ -41,7 +41,7 @@ class HTMLReport(Report):
     def output_head(self):
         print("<head>")
 
-        print("<title>%s</title>" % (self.title,))
+        print(f"<title>{self.title}</title>")
 
         print("</head>")
 
@@ -49,7 +49,7 @@ class HTMLReport(Report):
         print("<body>")
 
     def output_line(self, line):
-        print("<p>%s</p>" % (line,))
+        print(f"<p>{line}</p>")
 
     def output_body_end(self):
         print("</body>")
@@ -63,7 +63,7 @@ class PlainTextReport(Report):
         pass
 
     def output_head(self):
-        print("*** %s ***" % (self.title,))
+        print(f"*** {self.title} ***")
 
     def output_body_start(self):
         pass
