@@ -19,18 +19,21 @@ class Employee(object):
 
 class Payroll(object):
     def update(self, changed_employee):
-        print
-        "%sのために小切手を切ります！" % (changed_employee.name)
-        print
-        "%sの給料は現在%s円、肩書きは%sです" % (changed_employee.name,
-                                  changed_employee.salary,
-                                  changed_employee.title)
+        print(
+            "%sのために小切手を切ります！" % (changed_employee.name)
+        )
+        print(
+            "%sの給料は現在%s円、肩書きは%sです" % (changed_employee.name,
+                                      changed_employee.salary,
+                                      changed_employee.title)
+        )
 
 
 class Taxman(object):
     def update(self, changed_employee):
-        print
-        "%sに新しい税金の請求書を送ります。" % (changed_employee.name)
+        print(
+            "%sに新しい税金の請求書を送ります。" % (changed_employee.name)
+        )
 
 
 if __name__ == "__main__":
@@ -40,6 +43,6 @@ if __name__ == "__main__":
     fred.add_observer(payroll.update)
     fred.add_observer(taxman.update)
     fred.set_salary(350 * 10000)
-    print
+    print()
     fred.remove_observer(taxman.update)
     fred.set_salary(400 * 10000)
