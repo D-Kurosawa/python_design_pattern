@@ -22,6 +22,5 @@ def html_formatter(content):
 
 
 if __name__ == "__main__":
-    report = Report(u"月次報告", [u"順調！", u"最高です！"],
-                    html_formatter)
+    report = Report("月次報告", ["順調！", "最高です！"], html_formatter)
     report.output_report()
