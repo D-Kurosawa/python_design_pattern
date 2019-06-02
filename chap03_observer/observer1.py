@@ -1,4 +1,4 @@
-class Employee(object):
+class Employee:
     def __init__(self, name, title, salary):
         self.name = name
         self.title = title
@@ -17,7 +17,7 @@ class Employee(object):
         self.observers.remove(observer)
 
 
-class Payroll(object):
+class Payroll:
     @staticmethod
     def update(changed_employee):
         print(f"{changed_employee.name}のために小切手を切ります！")
@@ -25,7 +25,7 @@ class Payroll(object):
               f"肩書きは{changed_employee.title}です")
 
 
-class Taxman(object):
+class Taxman:
     @staticmethod
     def update(changed_employee):
         print(f"{changed_employee.name}に新しい税金の請求書を送ります。")
@@ -34,10 +34,13 @@ class Taxman(object):
 if __name__ == "__main__":
     payroll = Payroll()
     taxman = Taxman()
+
     fred = Employee("フレッド", "クレーン技師", 300 * 10000)
     fred.add_observer(payroll.update)
     fred.add_observer(taxman.update)
     fred.set_salary(350 * 10000)
+
     print()
+
     fred.remove_observer(taxman.update)
     fred.set_salary(400 * 10000)
