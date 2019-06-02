@@ -17,18 +17,18 @@ class HTMLFormatter(Formatter):
     def output_report(self, title, text):
         print("<html>")
         print("<head>")
-        print("<title>%s</title>" % (title,))
+        print(f"<title>{title}</title>")
         print("</head>")
         print("<body>")
         for line in text:
-            print("<p>%s</p>" % (line,))
+            print(f"<p>{line}</p>")
         print("</body>")
         print("</html>")
 
 
 class PlainTextFormatter(Formatter):
     def output_report(self, title, text):
-        print("***%s***" % (title,))
+        print(f"***{title}***")
         for line in text:
             print(line)
 
