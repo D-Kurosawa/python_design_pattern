@@ -19,21 +19,14 @@ class Employee(object):
 
 class Payroll(object):
     def update(self, changed_employee):
-        print(
-            "%sのために小切手を切ります！" % (changed_employee.name)
-        )
-        print(
-            "%sの給料は現在%s円、肩書きは%sです" % (changed_employee.name,
-                                      changed_employee.salary,
-                                      changed_employee.title)
-        )
+        print(f"{changed_employee.name}のために小切手を切ります！")
+        print(f"{changed_employee.name}の給料は現在{changed_employee.salary}円、"
+              f"肩書きは{changed_employee.title}です")
 
 
 class Taxman(object):
     def update(self, changed_employee):
-        print(
-            "%sに新しい税金の請求書を送ります。" % (changed_employee.name)
-        )
+        print(f"{changed_employee.name}に新しい税金の請求書を送ります。")
 
 
 if __name__ == "__main__":
