@@ -36,7 +36,7 @@ class Report(object):
 
 class PlainTextReport(Report):
     def output_head(self):
-        print("*** %s ***" % (self.title,))
+        print(f"*** {self.title} ***")
 
     def output_line(self, line):
         print(line)
