@@ -18,14 +18,16 @@ class Employee(object):
 
 
 class Payroll(object):
-    def update(self, changed_employee):
+    @staticmethod
+    def update(changed_employee):
         print(f"{changed_employee.name}のために小切手を切ります！")
         print(f"{changed_employee.name}の給料は現在{changed_employee.salary}円、"
               f"肩書きは{changed_employee.title}です")
 
 
 class Taxman(object):
-    def update(self, changed_employee):
+    @staticmethod
+    def update(changed_employee):
         print(f"{changed_employee.name}に新しい税金の請求書を送ります。")
 
 
