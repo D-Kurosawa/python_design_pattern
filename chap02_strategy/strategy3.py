@@ -24,6 +24,29 @@ def html_formatter(content):
     print("</html>")
 
 
+class PlainTextFormatter:
+    def __init__(self, decoration="***"):
+        self.decoration = decoration
+
+    def __call__(self, content):
+        """
+        :type content: Report
+        """
+        print(f"{self.decoration}{content.title}{self.decoration}")
+        for line in content.text:
+            print(line)
+
+
 if __name__ == "__main__":
     report = Report("月次報告", ["順調！", "最高です！"], html_formatter)
+    report.output_report()
+
+    print("-" * 70)
+
+    report = Report("月次報告", ["順調！", "最高です！"], PlainTextFormatter())
+    report.output_report()
+
+    print("-" * 70)
+
+    report = Report("月次報告", ["順調！", "最高です！"], PlainTextFormatter("==="))
     report.output_report()
