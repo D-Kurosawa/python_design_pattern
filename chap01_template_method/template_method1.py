@@ -5,11 +5,11 @@ class Report:
 
     def output_report(self, format):
         if format == "plain":
-            print("*** %s ***" % (self.title))
+            print(f"*** {self.title} ***")
         elif format == "html":
             print("<html>")
             print("<head>")
-            print("<title>%s</title>" % (self.title,))
+            print(f"<title>{self.title}</title>")
             print("</head>")
             print("<body>")
 
@@ -17,7 +17,7 @@ class Report:
             if format == "plain":
                 print(line)
             else:
-                print("<p>%s</p>" % (line,))
+                print(f"<p>{line}</p>")
 
         if format == "html":
             print("</body>")
