@@ -34,6 +34,30 @@ class Report(object):
         pass
 
 
+class HTMLReport(Report):
+    def output_start(self):
+        print("<html>")
+
+    def output_head(self):
+        print("<head>")
+
+        print(f"<title>{self.title}</title>")
+
+        print("</head>")
+
+    def output_body_start(self):
+        print("<body>")
+
+    def output_line(self, line):
+        print(f"<p>{line}</p>")
+
+    def output_body_end(self):
+        print("</body>")
+
+    def output_end(self):
+        print("</html>")
+
+
 class PlainTextReport(Report):
     def output_head(self):
         print(f"*** {self.title} ***")
@@ -44,6 +68,9 @@ class PlainTextReport(Report):
 
 if __name__ == "__main__":
     report = PlainTextReport()
+    report.output_report()
+
+    report = HTMLReport()
     report.output_report()
 
     report = Report()
