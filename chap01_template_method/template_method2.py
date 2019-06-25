@@ -18,6 +18,11 @@ HTMLもプレーンテキストも、
 
 
 class Report:
+    """
+    :type title: str
+    :type text: list[str]
+    """
+
     def __init__(self):
         self.title = "月次報告"
         self.text = ["順調", "最高"]
@@ -44,6 +49,9 @@ class Report:
         assert False, "called abstruct method output_body_start"
 
     def output_line(self, line):
+        """
+        :type line: str
+        """
         assert False, "called abstruct method output_body"
 
     def output_body_end(self):
@@ -88,6 +96,9 @@ class PlainTextReport(Report):
         pass
 
     def output_line(self, line):
+        """
+        :type line: str
+        """
         print(line)
 
     def output_body_end(self):
