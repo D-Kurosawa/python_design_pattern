@@ -30,7 +30,18 @@ Reportからその部分を取り除くことで「関心の分離」を行う�
 
 
 class Report:
+    """
+    :type title: str
+    :type text: list[str]
+    :type formatter: Formatter
+    """
+
     def __init__(self, title, text, formatter):
+        """
+        :type title: str
+        :type text: list[str]
+        :type formatter: Formatter
+        """
         self.title = title
         self.text = text
         self.formatter = formatter
@@ -41,11 +52,19 @@ class Report:
 
 class Formatter:
     def output_report(self, title, text):
+        """
+        :type title: str
+        :type text: list[str]
+        """
         assert False
 
 
 class HTMLFormatter(Formatter):
     def output_report(self, title, text):
+        """
+        :type title: str
+        :type text: list[str]
+        """
         print("<html>")
         print("<head>")
         print(f"<title>{title}</title>")
@@ -59,6 +78,10 @@ class HTMLFormatter(Formatter):
 
 class PlainTextFormatter(Formatter):
     def output_report(self, title, text):
+        """
+        :type title: str
+        :type text: list[str]
+        """
         print(f"***{title}***")
         for line in text:
             print(line)
