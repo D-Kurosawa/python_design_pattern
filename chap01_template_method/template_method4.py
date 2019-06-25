@@ -16,6 +16,10 @@ import abc
 
 
 class Report(metaclass=abc.ABCMeta):
+    """
+    :type title: str
+    :type text: list[str]
+    """
 
     def __init__(self):
         self.title = "月次報告"
@@ -73,6 +77,9 @@ class HTMLReport(Report):
         print("<body>")
 
     def output_line(self, line):
+        """
+        :type line: str
+        """
         print(f"<p>{line}</p>")
 
     def output_body_end(self):
@@ -87,6 +94,9 @@ class PlainTextReport(Report):
         print(f"*** {self.title} ***")
 
     def output_line(self, line):
+        """
+        :type line: str
+        """
         print(line)
 
     def output_start(self):
