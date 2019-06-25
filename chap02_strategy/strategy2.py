@@ -21,7 +21,18 @@ __call__メソッドを定義すれば、インスタンスを関数のように
 
 
 class Report:
+    """
+    :type title: str
+    :type text: list[str]
+    :type formatter: any
+    """
+
     def __init__(self, title, text, formatter):
+        """
+        :type title: str
+        :type text: list[str]
+        :type formatter: any
+        """
         self.title = title
         self.text = text
         self.formatter = formatter
@@ -34,6 +45,10 @@ class Report:
 
 # 関数版のHTMLFormatter
 def html_formatter(title, text):
+    """
+    :type title: str
+    :type text: list[str]
+    """
     print("<html>")
     print("<head>")
     print(f"<title>{title}</title>")
@@ -47,10 +62,21 @@ def html_formatter(title, text):
 
 # Callable版 PlainTextFormatter
 class PlainTextFormatter:
+    """
+    :type decoration: str
+    """
+
     def __init__(self, decoration="***"):
+        """
+        :type decoration: str
+        """
         self.decoration = decoration
 
     def __call__(self, title, text):
+        """
+        :type title: str
+        :type text: list[str]
+        """
         print(f"{self.decoration}{title}{self.decoration}")
         for line in text:
             print(line)

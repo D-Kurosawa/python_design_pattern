@@ -12,7 +12,18 @@ Strategyパターンを使う際は、ストラテジの範囲と渡すべきデ
 
 
 class Report:
+    """
+    :type title: str
+    :type text: list[str]
+    :type formatter: any
+    """
+
     def __init__(self, title, text, formatter):
+        """
+        :type title: str
+        :type text: list[str]
+        :type formatter: any
+        """
         self.title = title
         self.text = text
         self.formatter = formatter
@@ -41,6 +52,9 @@ def html_formatter(content):
 
 class PlainTextFormatter:
     def __init__(self, decoration="***"):
+        """
+        :type decoration: str
+        """
         self.decoration = decoration
 
     def __call__(self, content):
